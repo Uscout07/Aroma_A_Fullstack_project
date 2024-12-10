@@ -1,6 +1,8 @@
-const isGithubPages = process.env.NODE_ENV === 'production';
+/** @type {import('next.js').NextConfig} */
+const nextConfig = {
+  output: 'export', // This enables static HTML export
+  basePath: '/Aroma_A_Fullstack_project', // Replace with your exact GitHub repo name
+  assetPrefix: '/Aroma_A_Fullstack_project', // Same as basePath
+}
 
-export default {
-  basePath: isGithubPages ? '/Aroma_A_Fullstack_project' : '',
-  assetPrefix: isGithubPages ? '/Aroma_A_Fullstack_project/' : '',
-};
+module.exports = nextConfig
