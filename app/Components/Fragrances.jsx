@@ -96,7 +96,7 @@ export default function Fragrances() {
         <div className="inner-div h-full">
           <div className="slide lg:h-full lg:w-1/2 h-1/2 w-full lg:rounded-bl-full lg:rounded-tl-full max-lg:rounded-br-full max-lg:rounded-bl-full lg:float-right bg-white flex items-center justify-center">
             <img
-              src="/assets/Fragrances/lavender.png"
+              src={`${process.env.basePath}/assets/Fragrances/lavender.png`}
               className="h-[98%] w-[98%] object-fill lg:rounded-bl-full lg:rounded-tl-full max-lg:rounded-br-full max-lg:rounded-bl-full"
             />
           </div>
@@ -133,7 +133,7 @@ export default function Fragrances() {
               <RoseModel />
             </div>
             <img
-              src="/assets/Fragrances/rose.jpeg"
+              src={`${process.env.basePath}/assets/Fragrances/rose.jpeg`}
               className="h-[98%] w-[98%] object-fill lg:rounded-bl-full lg:rounded-tl-full max-lg:rounded-br-full max-lg:rounded-bl-full"
             />
           </div>
@@ -168,7 +168,7 @@ export default function Fragrances() {
               <CherryModel />
             </div>
             <img
-              src="/assets/Fragrances/cherry.jpeg"
+              src={`${process.env.basePath}/assets/Fragrances/cherry.jpeg`}
               className="h-[98%] w-[98%] object-fill lg:rounded-bl-full lg:rounded-tl-full max-lg:rounded-br-full max-lg:rounded-bl-full"
             />
           </div>
@@ -203,7 +203,7 @@ export default function Fragrances() {
               <CitrusModel />
             </div>
             <img
-              src="/assets/Fragrances/Citrus.jpeg"
+              src={`${process.env.basePath}/assets/Fragrances/Citrus.jpeg`}
               className="h-[98%] w-[98%] object-fill lg:rounded-bl-full lg:rounded-tl-full max-lg:rounded-br-full max-lg:rounded-bl-full"
             />
           </div>

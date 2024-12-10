@@ -1,6 +1,6 @@
 import localFont from "next/font/local";
 import "./globals.css";
-import Provider from "./Components/Provider";
+
 
 
 
@@ -14,9 +14,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
       >
-        <Provider>
+        
         {children}
-        </Provider>
       </body>
     </html>
   );

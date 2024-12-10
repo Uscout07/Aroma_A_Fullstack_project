@@ -132,7 +132,7 @@ const Lavendar = (props) => {
         <RotatingLavender />
         <SoftShadows />
         <Environment
-          files={"/assets/HDR-file/light.hdr"}
+          files={`${process.env.basePath}/assets/HDR-file/light.hdr`}
           environmentIntensity={0.5}
         />
       </Canvas>

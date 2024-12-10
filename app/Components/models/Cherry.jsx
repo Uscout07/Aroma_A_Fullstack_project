@@ -6,7 +6,7 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function Cherry(props) {
-  const { nodes, materials } = useGLTF('/assets/3d-model/cherry.glb')
+  const { nodes, materials } = useGLTF(`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/assets/3d-model/cherry.glb`)
   return (
     <group {...props} dispose={null}>
       <group position={[0, -1.603, -0.003]} scale={0.636}>
@@ -69,4 +69,4 @@ export function Cherry(props) {
   )
 }
 
-useGLTF.preload('/assets/3d-model/cherry.glb')
+useGLTF.preload(`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/assets/3d-model/cherry.glb`)
