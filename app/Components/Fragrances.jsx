@@ -29,7 +29,7 @@ export default function Fragrances() {
       { Class: ".CherryDiv", ScrollTrig: ".RoseDiv", bgColor: "#fbcfe8" },
       { Class: ".CitrusDiv", ScrollTrig: ".CherryDiv", bgColor: "#FECACA" },
     ];
-    Condition.add("min-width: 1024px", () => {
+    Condition.add("min-width: 1023px", () => {
       SlideClasses.forEach(({ Class, ScrollTrig }) => {
         tl.from(Class, {
           y: "100%",
@@ -45,7 +45,7 @@ export default function Fragrances() {
             scrub: true,
           },
         });
-      });
+      }, []);
       DisClasses.forEach(({ Class, ScrollTrig }) => {
         tl.from(Class, {
           x: "-100%",
