@@ -1,9 +1,6 @@
-// next.config.mjs
+const isGithubPages = process.env.NODE_ENV === 'production';
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
+export default {
+  basePath: isGithubPages ? '/Aroma_A_Fullstack_project' : '',
+  assetPrefix: isGithubPages ? '/Aroma_A_Fullstack_project/' : '',
 };
-
-export default nextConfig;
