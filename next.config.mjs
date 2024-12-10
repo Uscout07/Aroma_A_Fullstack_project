@@ -1,8 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export', // This enables static HTML export
-  basePath: '/Aroma_A_Fullstack_project', // Replace with your exact GitHub repo name
-  assetPrefix: '/Aroma_A_Fullstack_project', // Same as basePath
+  output: 'export',
+  basePath: '/Aroma_A_Fullstack_project',
+  assetPrefix: '/Aroma_A_Fullstack_project',
+  env: {
+    NEXT_PUBLIC_BASE_PATH: '/Aroma_A_Fullstack_project'
+  }
 }
 
 export default nextConfig
