@@ -203,7 +203,7 @@ export default function Fragrances() {
               <CitrusModel />
             </div>
             <img
-              src="./assets/Fragrances/Citrus.jpeg"
+              src="./assets/Fragrances/citrus.jpeg"
               className="h-[98%] w-[98%] object-fill lg:rounded-bl-full lg:rounded-tl-full max-lg:rounded-br-full max-lg:rounded-bl-full"
             />
           </div>
