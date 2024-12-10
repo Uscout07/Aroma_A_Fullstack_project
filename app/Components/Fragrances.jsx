@@ -9,7 +9,7 @@ import CherryModel from "./Canvses/CherryModel";
 export default function Fragrances() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    const isLg = window.innerHeight >= 1024
+    const isLg = window.innerHeight <= 1024
     const home = document.querySelector(".home");
     const tl = gsap.timeline();
     const SlideClasses = [
