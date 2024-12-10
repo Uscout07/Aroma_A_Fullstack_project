@@ -41,7 +41,6 @@ export default function Fragrances() {
           start: "center+=15",
           end: "bottom+=15",
           scrub: true,
-          invalidateOnRefresh: true,
         },
       });
     });
@@ -58,7 +57,6 @@ export default function Fragrances() {
           start: "center+=15",
           end: "bottom+=15",
           scrub: true,
-          invalidateOnRefresh: true,
         },
       });
     });
@@ -70,7 +68,6 @@ export default function Fragrances() {
           start: "center+=15",
           end: "bottom+=15",
           scrub: true,
-          invalidateOnRefresh: true,
         },
       });
     });
@@ -85,8 +82,7 @@ export default function Fragrances() {
         trigger: home,
         start: "center+=5",
         end: "bottom+=6",
-        scrub: true,
-        invalidateOnRefresh: true,
+        scrub: true
       },
     });
   }, []);
