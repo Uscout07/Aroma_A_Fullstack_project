@@ -45,7 +45,7 @@ export default function Last() {
         </div>
       </div>
     </section>
-    <img className="md:w-1/2 w-3/4 h-1/2 drop-shadow-2xl max-md:pb-5" src="./assets/Lastsec_image.png"/>
+    <img className="md:w-1/2 w-3/4 h-1/2 drop-shadow-2xl max-md:pb-5" src='./assets/Lastsec_image.png'/>
     </div>
    
   )

@@ -6,7 +6,7 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function Roses(props) {
-  const { nodes, materials } = useGLTF("./assets/3d-model/Rose.glb")
+  const { nodes, materials } = useGLTF('./assets/3d-model/rose.glb')
   return (
     <group {...props} dispose={null}>
       <group position={[0, -1.603, -0.003]} scale={0.636}>
@@ -68,5 +68,3 @@ export function Roses(props) {
     </group>
   )
 }
-
-useGLTF.preload("./assets/3d-model/Rose.glb")
