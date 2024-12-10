@@ -12,83 +12,94 @@ export default function Fragrances() {
     const home = document.querySelector(".home");
     const tl = gsap.timeline();
     const Condition = gsap.matchMedia();
-    const SlideClasses = [
-      { Class: ".Slide", ScrollTrig: home },
-      { Class: ".Rose-Media", ScrollTrig: ".LavenderDiv" },
-      { Class: ".Cherry-Media", ScrollTrig: ".RoseDiv" },
-      { Class: ".Citrus-Media", ScrollTrig: ".CherryDiv" },
-    ];
-    const DisClasses = [
-      { Class: ".lavender-dis", ScrollTrig: home },
-      { Class: ".rose-dis", ScrollTrig: ".LavenderDiv" },
-      { Class: ".cherry-dis", ScrollTrig: ".RoseDiv" },
-      { Class: ".citrus-dis", ScrollTrig: ".CherryDiv" },
-    ];
-    const BgClasses = [
-      { Class: ".RoseDiv", ScrollTrig: ".LavenderDiv", bgColor: "#d4b3ff" },
-      { Class: ".CherryDiv", ScrollTrig: ".RoseDiv", bgColor: "#fbcfe8" },
-      { Class: ".CitrusDiv", ScrollTrig: ".CherryDiv", bgColor: "#FECACA" },
-    ];
-    Condition.add("min-width: 1023px", () => {
-      SlideClasses.forEach(({ Class, ScrollTrig }) => {
-        tl.from(Class, {
-          y: "100%",
-          x: "20%",
-          duration: 4,
-          opacity: 0.5,
-          delay: 2,
-          ease: "power1.out",
-          scrollTrigger: {
-            trigger: ScrollTrig,
-            start: "center+=15",
-            end: "bottom+=15",
-            scrub: true,
-          },
-        });
-      }, []);
-      DisClasses.forEach(({ Class, ScrollTrig }) => {
-        tl.from(Class, {
-          x: "-100%",
-          duration: 4,
-          opacity: 0.5,
-          delay: 2,
-          ease: "power1.out",
-          stagger: 4,
-          scrollTrigger: {
-            trigger: ScrollTrig,
-            start: "center+=15",
-            end: "bottom+=15",
-            scrub: true,
-          },
-        });
-      });
-    });
-
-    BgClasses.forEach(({ Class, ScrollTrig, bgColor }) => {
-      tl.from(Class, {
-        backgroundColor: bgColor,
-        scrollTrigger: {
-          trigger: ScrollTrig,
-          start: "center+=15",
-          end: "bottom+=15",
-          scrub: true,
-        },
-      });
-    });
-
-    tl.from(".inner-div", {
-      y: "100%",
-      duration: 1,
-      opacity: 0.5,
-      delay: 0.5,
-      ease: "power1.out",
-      scrollTrigger: {
-        trigger: home,
-        start: "center+=5",
-        end: "bottom+=6",
-        scrub: true,
+    let mm = gsap.matchMedia();
+    mm.add(
+      {
+        isDesktop: "(min-width: 1024px)",
+        isMobile: "(max-width: 1023px)",
+        reduceMotion: "(prefers-reduced-motion: reduce)",
       },
-    });
+      (context) => {
+        let { isDesktop, isMobile, reduceMotion } = context.conditions;
+        const SlideClasses = [
+          { Class: ".Slide", ScrollTrig: home },
+          { Class: ".Rose-Media", ScrollTrig: ".LavenderDiv" },
+          { Class: ".Cherry-Media", ScrollTrig: ".RoseDiv" },
+          { Class: ".Citrus-Media", ScrollTrig: ".CherryDiv" },
+        ];
+        const DisClasses = [
+          { Class: ".lavender-dis", ScrollTrig: home },
+          { Class: ".rose-dis", ScrollTrig: ".LavenderDiv" },
+          { Class: ".cherry-dis", ScrollTrig: ".RoseDiv" },
+          { Class: ".citrus-dis", ScrollTrig: ".CherryDiv" },
+        ];
+        const BgClasses = [
+          { Class: ".RoseDiv", ScrollTrig: ".LavenderDiv", bgColor: "#d4b3ff" },
+          { Class: ".CherryDiv", ScrollTrig: ".RoseDiv", bgColor: "#fbcfe8" },
+          { Class: ".CitrusDiv", ScrollTrig: ".CherryDiv", bgColor: "#FECACA" },
+        ];
+        Condition.add("min-width: 1024px", () => {
+          SlideClasses.forEach(({ Class, ScrollTrig }) => {
+            tl.from(Class, {
+              y: "100%",
+              x: isDesktop? "20%":'0%',
+              duration: 4,
+              opacity: 0.5,
+              delay: 2,
+              ease: "power1.out",
+              scrollTrigger: {
+                trigger: ScrollTrig,
+                start: "center+=15",
+                end: "bottom+=15",
+                scrub: true,
+              },
+            });
+          });
+          DisClasses.forEach(({ Class, ScrollTrig }) => {
+            tl.from(Class, {
+              x: "-100%",
+              duration: 4,
+              opacity: 0.5,
+              delay: 2,
+              ease: "power1.out",
+              stagger: 4,
+              scrollTrigger: {
+                trigger: ScrollTrig,
+                start: "center+=15",
+                end: "bottom+=15",
+                scrub: true,
+              },
+            });
+          });
+        });
+
+        BgClasses.forEach(({ Class, ScrollTrig, bgColor }) => {
+          tl.from(Class, {
+            backgroundColor: bgColor,
+            scrollTrigger: {
+              trigger: ScrollTrig,
+              start: "center+=15",
+              end: "bottom+=15",
+              scrub: true,
+            },
+          });
+        });
+
+        tl.from(".inner-div", {
+          y: "100%",
+          duration: 1,
+          opacity: 0.5,
+          delay: 0.5,
+          ease: "power1.out",
+          scrollTrigger: {
+            trigger: home,
+            start: "center+=5",
+            end: "bottom+=6",
+            scrub: true,
+          },
+        });
+      }
+    );
   }, []);
   return (
     <div className="h-auto">
