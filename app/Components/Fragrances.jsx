@@ -9,9 +9,9 @@ import CherryModel from "./Canvses/CherryModel";
 export default function Fragrances() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    const isLg = window.innerHeight >= 1024
     const home = document.querySelector(".home");
     const tl = gsap.timeline();
+    const Condition = gsap.matchMedia();
     const SlideClasses = [
       { Class: ".Slide", ScrollTrig: home },
       { Class: ".Rose-Media", ScrollTrig: ".LavenderDiv" },
@@ -19,7 +19,7 @@ export default function Fragrances() {
       { Class: ".Citrus-Media", ScrollTrig: ".CherryDiv" },
     ];
     const DisClasses = [
-      { Class: ".lavender-dis", ScrollTrig: home},
+      { Class: ".lavender-dis", ScrollTrig: home },
       { Class: ".rose-dis", ScrollTrig: ".LavenderDiv" },
       { Class: ".cherry-dis", ScrollTrig: ".RoseDiv" },
       { Class: ".citrus-dis", ScrollTrig: ".CherryDiv" },
@@ -29,41 +29,43 @@ export default function Fragrances() {
       { Class: ".CherryDiv", ScrollTrig: ".RoseDiv", bgColor: "#fbcfe8" },
       { Class: ".CitrusDiv", ScrollTrig: ".CherryDiv", bgColor: "#FECACA" },
     ];
-    if (!isLg) {
-    SlideClasses.forEach(({ Class, ScrollTrig }) => {
-      tl.from(Class, {
-        y: "100%",
-        x: "20%",
-        duration: 4,
-        opacity: 0.5,
-        delay: 2,
-        ease: "power1.out",
-        scrollTrigger: {
-          trigger: ScrollTrig,
-          start: "center+=15",
-          end: "bottom+=15",
-          scrub: true,
-        },
+    Condition.add("min-width: 1024px", () => {
+      SlideClasses.forEach(({ Class, ScrollTrig }) => {
+        tl.from(Class, {
+          y: "100%",
+          x: "20%",
+          duration: 4,
+          opacity: 0.5,
+          delay: 2,
+          ease: "power1.out",
+          scrollTrigger: {
+            trigger: ScrollTrig,
+            start: "center+=15",
+            end: "bottom+=15",
+            scrub: true,
+          },
+        });
+      });
+      DisClasses.forEach(({ Class, ScrollTrig }) => {
+        tl.from(Class, {
+          x: "-100%",
+          duration: 4,
+          opacity: 0.5,
+          delay: 2,
+          ease: "power1.out",
+          stagger: 4,
+          scrollTrigger: {
+            trigger: ScrollTrig,
+            start: "center+=15",
+            end: "bottom+=15",
+            scrub: true,
+          },
+        });
       });
     });
-    DisClasses.forEach(({ Class, ScrollTrig }) => {
-      tl.from(Class, {
-        x: "-100%",
-        duration: 4,
-        opacity: 0.5,
-        delay: 2,
-        ease: "power1.out",
-        stagger: 4,
-        scrollTrigger: {
-          trigger: ScrollTrig,
-          start: "center+=15",
-          end: "bottom+=15",
-          scrub: true,
-        },
-      });
-    });
+
     BgClasses.forEach(({ Class, ScrollTrig, bgColor }) => {
-      tl.from(Class,{
+      tl.from(Class, {
         backgroundColor: bgColor,
         scrollTrigger: {
           trigger: ScrollTrig,
@@ -84,9 +86,9 @@ export default function Fragrances() {
         trigger: home,
         start: "center+=5",
         end: "bottom+=6",
-        scrub: true
+        scrub: true,
       },
-    })};
+    });
   }, []);
   return (
     <div className="h-auto">
