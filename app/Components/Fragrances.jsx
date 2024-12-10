@@ -9,6 +9,7 @@ import CherryModel from "./Canvses/CherryModel";
 export default function Fragrances() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+    const isLg = window.innerHeight >= 1024
     const home = document.querySelector(".home");
     const tl = gsap.timeline();
     const SlideClasses = [
@@ -28,6 +29,7 @@ export default function Fragrances() {
       { Class: ".CherryDiv", ScrollTrig: ".RoseDiv", bgColor: "#fbcfe8" },
       { Class: ".CitrusDiv", ScrollTrig: ".CherryDiv", bgColor: "#FECACA" },
     ];
+    if (isLg) {
     SlideClasses.forEach(({ Class, ScrollTrig }) => {
       tl.from(Class, {
         y: "100%",
@@ -84,7 +86,7 @@ export default function Fragrances() {
         end: "bottom+=6",
         scrub: true
       },
-    });
+    })};
   }, []);
   return (
     <div className="h-auto">
