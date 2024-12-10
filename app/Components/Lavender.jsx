@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function Lavender(props) {
-  const { nodes, materials } = useGLTF('/assets/3d-model/lavender.glb')
+  const { nodes, materials } = useGLTF('./assets/3d-model/lavender.glb')
   return (
     <group {...props} dispose={null}>
       <group position={[0.006, -1.618, -0.003]} scale={0.642}>

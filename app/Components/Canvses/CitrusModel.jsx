@@ -18,7 +18,7 @@ export default function CitrusModel() {
       </mesh>
       <SoftShadows />
       <Environment
-        files={"/assets/HDR-file/light.hdr"}
+        files={"./assets/HDR-file/light.hdr"}
         environmentIntensity={0.5}
       />
     </Canvas>
