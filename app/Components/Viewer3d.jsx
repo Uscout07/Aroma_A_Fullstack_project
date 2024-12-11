@@ -52,7 +52,7 @@ const RotatingLavender = () => {
         rotationIntensity={0.5}
         floatIntensity={1}
         floatingRange={[-0.1, 0.1]}
-      > 
+      >
         <Lavender />
       </Float>
     </mesh>
@@ -92,7 +92,7 @@ const Lavendar = (props) => {
       if (typeof window !== "undefined") {
         gsap.registerPlugin(ScrollTrigger);
         const home = document.querySelector(".home");
-        
+
         const SimpleTl = gsap.timeline();
         SimpleTl.from(canvasRef.current, {
           scale: 3,
@@ -146,7 +146,7 @@ const Lavendar = (props) => {
 
   return (
     <div
-  className="CanvasDiv 
+      className="CanvasDiv 
     fixed 
     max-md:absolute 
     max-md:top-[5vh] 
@@ -160,14 +160,9 @@ const Lavendar = (props) => {
     pointer-events-none 
     h-screen 
     w-screen"
-  ref={canvasDivRef}
->
-      <Canvas
-        shadows
-        dpr={[1, 1.5]}
-        ref={canvasRef}
-
-      >
+      ref={canvasDivRef}
+    >
+      <Canvas shadows dpr={[1, 1.5]} ref={canvasRef} className="max-md:flex flex-col max-md:items-start">
         <RotatingLavender />
         <SoftShadows />
         <Environment
