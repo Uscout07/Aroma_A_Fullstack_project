@@ -146,13 +146,14 @@ const Lavendar = (props) => {
 
   return (
     <div
-      className="CanvasDiv max-md:absolute fixed max-md:top-0 max-md:mt-4 md:top-[50%] md:translate-y-[-50%] left-[50%] translate-x-[-50%] z-20 pointer-events-none h-screen w-screen"
+      className="CanvasDiv max-md:absolute max-md:flex flex-col max-md:items-start fixed max-md:top-0 max-md:mt-4 md:top-[50%] md:translate-y-[-50%] left-[50%] translate-x-[-50%] z-20 pointer-events-none h-screen w-screen"
       ref={canvasDivRef}
     >
       <Canvas
         shadows
         dpr={[1, 1.5]}
         ref={canvasRef}
+
       >
         <RotatingLavender />
         <SoftShadows />
