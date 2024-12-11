@@ -52,8 +52,8 @@ export default function Home() {
         
         <div className="w-full z-0 relative h-auto text-center bg-[#E9D5FF] flex flex-col justify-center">
           <div className="home">
-          <div className="h-screen flex flex-col justify-evenly items-center md:items-center md:justify-center max-md:py-5"> 
-          <h5 className="max-md:hidden intro hero-text max-md:text-[3.2vh] lg:text-[8vh] xl:text-[10vh] p-20 h-screen leading-relaxed font-bold text-[#501c94] tracking-wide">
+          <div className="h-screen flex flex-col justify-evenly items-center lg:items-center lg:justify-center max-lg:py-5"> 
+          <h5 className="max-lg:hidden lg:visible intro hero-text max-lg:text-[3.2vh] lg:text-[8vh] xl:text-[10vh] p-20 h-screen leading-relaxed font-bold text-[#501c94] tracking-wide">
             Simplicity Meets Sophistication.
             <br />
             Simplicity Meets Sophistication.
@@ -65,17 +65,17 @@ export default function Home() {
             Simplicity Meets Sophistication.
           </h5>
           <img src='./assets/Lavender.png' className="w-full"/>
-          <h5 className="md:hidden flex w-full text-[5vh] px-2 pb-10 text-left text-purple-950 font-bold">
+          <h5 className="lg:hidden flex w-full text-[5vh] px-2 pb-10 text-left text-purple-950 font-bold">
             SIMPLICITY<br/>
             MEETS<br/>
             SOPHISTICATION<br/>
           </h5>
           </div>
-          <div className="md:h-screen h-auto md:mt-10">
-            <h2 id='About' className="About z-30 text-9xl mb-20 font-bold text-purple-950 top-[50%] left-[50%] translate-x-[10%] bottom-10 max-md:text-5xl">
+          <div className="lg:h-screen h-auto lg:mt-10">
+            <h2 id='About' className="About z-30 text-9xl mb-20 font-bold text-purple-950 top-[50%] left-[50%] translate-x-[10%] bottom-10 max-lg:text-5xl">
               Our Story
             </h2>
-            <p className="About-para md:w-[90vh] w-[75%] top-[30%] pb-10 left-0 max-md:text-xs  max-md:text-left translate-x-[20%] text-left text-[#2c0f52]">
+            <p className="About-para lg:w-[90vh] w-[75%] top-[30%] pb-10 left-0 max-lg:text-xs  max-lg:text-left translate-x-[20%] text-left text-[#2c0f52]">
               Born in the heart of Italy, *Aroma* was founded with a singular
               vision: to redefine the art of scent and elevate it to a new level
               of sophistication. Drawing inspiration from Italy's rich heritage
