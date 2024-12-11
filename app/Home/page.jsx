@@ -52,7 +52,7 @@ export default function Home() {
         
         <div className="w-full z-0 relative h-auto text-center bg-[#E9D5FF] flex flex-col justify-center">
           <div className="home">
-          <div className="h-screen flex flex-col md:items-center md:justify-center"> 
+          <div className="h-screen flex flex-col items-left justify-end md:items-center md:justify-center"> 
           <h5 className="max-md:hidden intro hero-text max-md:text-[3.2vh] lg:text-[8vh] xl:text-[10vh] p-20 h-screen leading-relaxed font-bold text-[#501c94] tracking-wide">
             Simplicity Meets Sophistication.
             <br />
@@ -64,7 +64,7 @@ export default function Home() {
             <br />
             Simplicity Meets Sophistication.
           </h5>
-          <h5 className="md:hidden flex w-full text-[6vh] font-bold float-end">
+          <h5 className="md:hidden flex w-full text-[4vh] font-bold float-end">
             SIMPLICITY<br/>
             MEETS<br/>
             SOPHISTICATION<br/>
