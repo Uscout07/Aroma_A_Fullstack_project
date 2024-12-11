@@ -146,7 +146,7 @@ const Lavendar = (props) => {
 
   return (
     <div
-      className="CanvasDiv max-md:absolute fixed max-md:mt-[5vh] md:top-[50%] md:translate-y-[-50%] left-[50%] translate-x-[-50%] z-20 pointer-events-none h-screen w-screen"
+      className="CanvasDiv max-md:absolute fixed max-md:mt-[1.5vh] md:top-[50%] md:translate-y-[-50%] left-[50%] translate-x-[-50%] z-20 pointer-events-none h-screen w-screen"
       ref={canvasDivRef}
     >
       <Canvas
