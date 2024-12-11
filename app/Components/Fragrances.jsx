@@ -34,7 +34,7 @@ export default function Fragrances() {
           { Class: ".citrus-dis", ScrollTrig: ".CherryDiv" },
         ];
         const BgClasses = [
-          { Class: ".RoseDiv", ScrollTrig: ".LavenderDiv", bgColor: "#d4b3ff" },
+          { Class: ".RoseDiv", ScrollTrig: ".LavenderDiv", bgColor: "#E9D5FF" },
           { Class: ".CherryDiv", ScrollTrig: ".RoseDiv", bgColor: "#fbcfe8" },
           { Class: ".CitrusDiv", ScrollTrig: ".CherryDiv", bgColor: "#FECACA" },
         ];
@@ -102,7 +102,7 @@ export default function Fragrances() {
   }, []);
   return (
     <div className="h-auto">
-      <div className="LavenderDiv fragrance1 bg-[#d4b3ff] lg:h-[100vh] max-lg:flex flex-col">
+      <div className="LavenderDiv fragrance1 bg-[#E9D5FF] lg:h-[100vh] max-lg:flex flex-col">
         <div className="inner-div h-full">
           <div className="slide lg:h-full lg:w-1/2 h-1/2 w-full lg:rounded-bl-full lg:rounded-tl-full max-lg:rounded-br-full max-lg:rounded-bl-full lg:float-right bg-white flex items-center justify-center">
             <img
