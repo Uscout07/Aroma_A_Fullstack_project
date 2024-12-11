@@ -66,7 +66,7 @@ const Lavendar = (props) => {
   useEffect(() => {
     const mm = gsap.matchMedia();
 
-    mm.add("(max-width: 767px)", () => {
+    mm.add("(min-width: 768px)", () => {
       const handleScroll = () => {
         const scrollY = window.scrollY;
         const canvasDiv = canvasDivRef.current;
