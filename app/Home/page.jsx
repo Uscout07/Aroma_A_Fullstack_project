@@ -52,6 +52,7 @@ export default function Home() {
         
         <div className="w-full z-0 relative h-auto text-center bg-[#E9D5FF] flex flex-col justify-center">
           <div className="home">
+          <div className="h-screen flex flex-col md:items-center md:justify-center"> 
           <h5 className="max-md:hidden intro hero-text max-md:text-[3.2vh] lg:text-[8vh] xl:text-[10vh] p-20 h-screen leading-relaxed font-bold text-[#501c94] tracking-wide">
             Simplicity Meets Sophistication.
             <br />
@@ -68,6 +69,7 @@ export default function Home() {
             MEETS<br/>
             SOPHISTICATION<br/>
           </h5>
+          </div>
           <div className="md:h-screen h-auto md:mt-10">
             <h2 id='About' className="About z-30 text-9xl mb-20 font-bold text-[#501c94] top-[50%] left-[50%] translate-x-[10%] bottom-10 max-md:text-5xl">
               Our Story

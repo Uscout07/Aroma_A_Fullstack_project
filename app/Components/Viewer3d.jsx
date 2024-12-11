@@ -152,7 +152,6 @@ const Lavendar = (props) => {
       <Canvas
         shadows
         dpr={[1, 1.5]}
-        className='max-md:hidden'
         ref={canvasRef}
       >
         <RotatingLavender />
