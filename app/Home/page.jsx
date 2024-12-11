@@ -64,14 +64,14 @@ export default function Home() {
             <br />
             Simplicity Meets Sophistication.
           </h5>
-          <img src='./assets/Lavender.png' className="w-full"/>
+          <img src='./assets/Lavender.png' className="w-full  lg:hidden "/>
           <h5 className="lg:hidden flex w-full text-[5vh] px-2 pb-10 text-left text-purple-950 font-bold">
             SIMPLICITY<br/>
             MEETS<br/>
             SOPHISTICATION<br/>
           </h5>
           </div>
-          <div className="lg:h-screen lg:hidden h-auto lg:mt-10">
+          <div className="lg:h-screen h-auto lg:mt-10">
             <h2 id='About' className="About z-30 text-9xl mb-20 font-bold text-purple-950 top-[50%] left-[50%] translate-x-[10%] bottom-10 max-lg:text-5xl">
               Our Story
             </h2>
