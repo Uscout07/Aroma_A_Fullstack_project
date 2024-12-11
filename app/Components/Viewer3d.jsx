@@ -6,39 +6,48 @@ import { Lavender } from "./Lavender";
 import { Canvas } from "@react-three/fiber";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useMediaQuery } from "@uidotdev/usehooks";
-import { NodeMaterial } from "three/webgpu";
 
 const RotatingLavender = () => {
   const meshRef = useRef(null);
-  const isMediumDevice = useMediaQuery(
-    "only screen and (min-width : 769px) and (max-width : 992px)"
-  );
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    const home = document.querySelector(".intro");
+    const mm = gsap.matchMedia();
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: home, // Ensure the ID matches your trigger element
-        start: "top+=10",
-        end: "bottom+=20r",
-        scrub: true,
-      },
+    mm.add("(min-width: 768px)", () => {
+      const home = document.querySelector(".intro");
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: home,
+          start: "top+=10",
+          end: "bottom+=20r",
+          scrub: true,
+        },
+      });
+
+      // Animate rotation directly only on larger screens
+      tl.to(meshRef.current.rotation, {
+        y: Math.PI / 8,
+        ease: "power1.out",
+        duration: 3,
+      });
+
+      // Cleanup function
+      return () => {
+        tl.kill();
+      };
     });
 
-    // Animate rotation directly
-    tl.to(meshRef.current.rotation, {
-      y: Math.PI / 8,
-      ease: "power1.out",
-      duration: 3,
-    });
+    // Cleanup matchMedia
+    return () => {
+      mm.revert();
+    };
   }, []);
 
   return (
     <mesh ref={meshRef} scale={1.05}>
-       <Float
+      <Float
         speed={1}
         rotationIntensity={0.5}
         floatIntensity={1}
@@ -53,15 +62,15 @@ const RotatingLavender = () => {
 const Lavendar = (props) => {
   const canvasRef = useRef(null);
   const canvasDivRef = useRef(null);
-  
-    useEffect(() => {
-      const mm = gsap.matchMedia()
-      mm.add("(max-width: 767px)",()=>{
+
+  useEffect(() => {
+    const mm = gsap.matchMedia();
+
+    mm.add("(max-width: 767px)", () => {
       const handleScroll = () => {
         const scrollY = window.scrollY;
         const canvasDiv = canvasDivRef.current;
-  
-  
+
         if (canvasDiv) {
           if (scrollY > window.innerHeight * 2) {
             canvasDiv.style.position = "absolute";
@@ -72,17 +81,18 @@ const Lavendar = (props) => {
           }
         }
       };
-  
+
       window.addEventListener("scroll", handleScroll);
       return () => {
         window.removeEventListener("scroll", handleScroll);
       };
-    }, []);
-  
-    useEffect(() => {
+    });
+
+    mm.add("(min-width: 768px)", () => {
       if (typeof window !== "undefined") {
         gsap.registerPlugin(ScrollTrigger);
         const home = document.querySelector(".home");
+        
         const SimpleTl = gsap.timeline();
         SimpleTl.from(canvasRef.current, {
           scale: 3,
@@ -91,7 +101,7 @@ const Lavendar = (props) => {
           delay: 0.3,
           ease: "power1.in",
         });
-  
+
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: home,
@@ -100,7 +110,7 @@ const Lavendar = (props) => {
             scrub: 1,
           },
         });
-  
+
         if (canvasRef.current) {
           tl.fromTo(
             canvasRef.current,
@@ -119,15 +129,24 @@ const Lavendar = (props) => {
             duration: 1,
           });
         }
-      }
-    }, []);
-  })
 
-  
+        // Cleanup function
+        return () => {
+          SimpleTl.kill();
+          tl.kill();
+        };
+      }
+    });
+
+    // Cleanup matchMedia
+    return () => {
+      mm.revert();
+    };
+  }, []);
 
   return (
     <div
-      className="CanvasDiv fixed max-md:mt-[5vh] md:top-[50%] md:translate-y-[-50%] left-[50%] translate-x-[-50%] z-20 pointer-events-none h-screen w-screen"
+      className="CanvasDiv max-md:absolute fixed max-md:mt-[5vh] md:top-[50%] md:translate-y-[-50%] left-[50%] translate-x-[-50%] z-20 pointer-events-none h-screen w-screen"
       ref={canvasDivRef}
     >
       <Canvas
@@ -146,6 +165,5 @@ const Lavendar = (props) => {
     </div>
   );
 };
-
 
 export default Lavendar;

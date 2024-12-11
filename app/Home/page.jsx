@@ -63,7 +63,7 @@ export default function Home() {
             <br />
             Simplicity Meets Sophistication.
           </h5>
-          <h5 className="md:hidden float-end flex w-full text-[6vh] font-bold">
+          <h5 className="md:hidden flex w-full text-[6vh] font-bold float-end">
             SIMPLICITY<br/>
             MEETS<br/>
             SOPHISTICATION<br/>
