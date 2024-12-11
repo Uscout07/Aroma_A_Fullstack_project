@@ -53,9 +53,10 @@ const RotatingLavender = () => {
 const Lavendar = (props) => {
   const canvasRef = useRef(null);
   const canvasDivRef = useRef(null);
-  const mm = gsap.matchMedia()
-  mm.add("(max-width: 767px)",()=>{
+  
     useEffect(() => {
+      const mm = gsap.matchMedia()
+      mm.add("(max-width: 767px)",()=>{
       const handleScroll = () => {
         const scrollY = window.scrollY;
         const canvasDiv = canvasDivRef.current;
